@@ -108,7 +108,7 @@ class Warehouse
     }
 
     /**
-     * Call strategy handle() method.
+     * Call strategy calculation() method.
      */
     public function calculation(int $quantity): int
     {
