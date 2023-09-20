@@ -7,5 +7,5 @@ interface StrategyInterface
     /**
      * Do something.
      */
-    public function rasschet(int $quantity);
+    public function calculation(int $quantity);
 }

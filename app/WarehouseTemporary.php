@@ -4,7 +4,7 @@ namespace test\app;
 
 class WarehouseTemporary implements StrategyInterface
 {
-    public function rasschet(int $quantity)
+    public function calculation(int $quantity)
     {
         $quantity += 0;
         echo $quantity;

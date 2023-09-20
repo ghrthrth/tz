@@ -110,8 +110,8 @@ class Warehouse
     /**
      * Call strategy handle() method.
      */
-    public function rasschet(int $quantity): int
+    public function calculation(int $quantity): int
     {
-        return $this->strategy->rasschet($quantity);
+        return $this->strategy->calculation($quantity);
     }
 }
