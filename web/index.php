@@ -3,13 +3,13 @@
  * Это единая точка входа для нашего приложения.
  */
 
-use test\app\Office;
-use test\app\Product;
-use test\app\ProductDistribution;
-use test\app\StandartWarehouse;
-use test\app\Warehouse;
-use test\app\WarehouseTemporary;
-use test\app\WarehouseVirtual;
+use test\src\Office;
+use test\src\Product;
+use test\src\ProductDistribution;
+use test\src\StandartWarehouse;
+use test\src\Warehouse;
+use test\src\WarehouseTemporary;
+use test\src\WarehouseVirtual;
 
 error_reporting(E_ALL); // устанавливает уровень отслеживаемых ошибок интерпретатором php
 ini_set('display_errors', 1); // дает команду интерпретатору php выводить все отслеживаемые ошибки в браузере
@@ -37,7 +37,7 @@ if ($wharehouse->getOfficeId() == $office->id && $productDistribution->productId
         $wharehouse->setStrategy(new WarehouseTemporary());
         echo "Склад {$wharehouse->getName()} тип: {$wharehouse->getType()} кол-во товаров: {$wharehouse->calculation($productDistribution->quantity)} относится к офису с id: {$office->id}" . PHP_EOL;
     } else {
-        echo "Склада с таким названием нет";
+        echo "Склада с таким типом нет";
     }
 } else {
     echo "Проверьте правильность заполнения объектов";

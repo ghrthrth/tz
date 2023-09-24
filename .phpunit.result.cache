@@ -1,0 +1,1 @@
+{"version":1,"defects":{"src\\OfficeTest::test__construct":7,"src\\WarehouseVirtualTest::testCalculation":7},"times":{"src\\OfficeTest::test__construct":0.006,"src\\WarehouseVirtualTest::testCalculation":0.006}}
