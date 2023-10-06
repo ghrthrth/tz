@@ -6,6 +6,8 @@ use Exception;
 
 class Warehouse extends Office
 {
+    private ?int $ids;
+    private ?string $names;
     private ?string $type;
     private ?StrategyInterface $strategy;
 
@@ -18,6 +20,38 @@ class Warehouse extends Office
             throw new Exception("Contract is already present.");
         }
         $this->strategy = $strategy;
+    }
+
+    /**
+     * @return int|null
+     */
+    public function getIds(): ?int
+    {
+        return $this->ids;
+    }
+
+    /**
+     * @param int|null $ids
+     */
+    public function setIds(?int $ids): void
+    {
+        $this->ids = $ids;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getNames(): ?string
+    {
+        return $this->names;
+    }
+
+    /**
+     * @param string|null $names
+     */
+    public function setNames(?string $names): void
+    {
+        $this->names = $names;
     }
 
     /**
