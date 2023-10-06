@@ -7,8 +7,7 @@ use Exception;
 class Warehouse extends Office
 {
     private ?string $type;
-    private ?int $office_id;
-    private $strategy;
+    private ?StrategyInterface $strategy;
 
     /**
      * @throws Exception
@@ -50,7 +49,7 @@ class Warehouse extends Office
      */
     public function getOfficeId(): ?int
     {
-        return $this->office_id;
+        return $this->getId();
     }
 
     /**
@@ -58,7 +57,7 @@ class Warehouse extends Office
      */
     public function setOfficeId(?int $office_id): void
     {
-        $this->office_id = $office_id;
+        $this->setId($office_id);
     }
 
     /**

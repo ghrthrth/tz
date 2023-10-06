@@ -16,7 +16,6 @@ require __DIR__ . '/../vendor/autoload.php';
 
 // инициализация объектов
 $wharehouse = new Warehouse();
-$wharehouse->setId(1);
 $wharehouse->setName("test");
 $wharehouse->setType("стандартный");
 $wharehouse->setOfficeId(1);
@@ -24,16 +23,16 @@ $wharehouse->setOfficeId(1);
 $productDistribution = new ProductDistribution(1, 1, 1, 40);
 $product = new Product(1, "test");
 
-if ($wharehouse->getOfficeId() == $wharehouse->getId() && $productDistribution->productId == $product->id && $productDistribution->warehouseId == $wharehouse->getId()) {
+if ($wharehouse->getOfficeId() == $wharehouse->getId() && $productDistribution->productId == $product->id && $productDistribution->warehouseId == $wharehouse->getOfficeId()) {
     if ($wharehouse->getType() == "стандартный") {
         $wharehouse->setStrategy(new StandartWarehouse());
-        echo "Склад {$wharehouse->getName()} тип: {$wharehouse->getType()} кол-во товаров: {$wharehouse->calculation($productDistribution->quantity)} относится к офису с id: {$wharehouse->getId()}" . PHP_EOL;
+        echo "Склад {$wharehouse->getName()} тип: {$wharehouse->getType()} кол-во товаров: {$wharehouse->calculation($productDistribution->quantity)} относится к офису с id: {$wharehouse->getOfficeId()}" . PHP_EOL;
     } elseif ($wharehouse->getType() == "виртуальный") {
         $wharehouse->setStrategy(new WarehouseVirtual());
-        echo "Склад {$wharehouse->getName()} тип: {$wharehouse->getType()} кол-во товаров: {$wharehouse->calculation($productDistribution->quantity)} относится к офису с id: {$wharehouse->getId()}" . PHP_EOL;
+        echo "Склад {$wharehouse->getName()} тип: {$wharehouse->getType()} кол-во товаров: {$wharehouse->calculation($productDistribution->quantity)} относится к офису с id: {$wharehouse->getOfficeId()}" . PHP_EOL;
     } elseif ($wharehouse->getType() == "временный") {
         $wharehouse->setStrategy(new WarehouseTemporary());
-        echo "Склад {$wharehouse->getName()} тип: {$wharehouse->getType()} кол-во товаров: {$wharehouse->calculation($productDistribution->quantity)} относится к офису с id: {$wharehouse->getId()}" . PHP_EOL;
+        echo "Склад {$wharehouse->getName()} тип: {$wharehouse->getType()} кол-во товаров: {$wharehouse->calculation($productDistribution->quantity)} относится к офису с id: {$wharehouse->getOfficeId()}" . PHP_EOL;
     } else {
         echo "Склада с таким типом нет";
     }
